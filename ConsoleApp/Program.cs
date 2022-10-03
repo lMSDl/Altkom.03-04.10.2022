@@ -2,6 +2,40 @@
 using System.Globalization;
 
 
+bool exit = true;
+while (!exit) {
+    Strings();
+
+    //var - typ zmiennej określany na podstawie wyniku prawej strony przypisania
+    var input = Console.ReadLine();
+    if (input == "exit")
+    {
+        exit = true;
+    }
+    else if (input == "break")
+    {
+        break;
+    }
+}
+
+exit = true;
+do
+{
+    Strings();
+
+    //var - typ zmiennej określany na podstawie wyniku prawej strony przypisania
+    var input = Console.ReadLine();
+    if (input == "exit")
+    {
+        exit = true;
+    }
+    else if (input == "break")
+    {
+        break;
+    }
+} while (exit);
+
+
 
 void Conditions()
 {
