@@ -1,67 +1,107 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 
+Loops();
 
-bool exit = true;
-while (!exit) {
-    Strings();
-
-    //var - typ zmiennej określany na podstawie wyniku prawej strony przypisania
+while (true)
+{
     var input = Console.ReadLine();
-    if (input == "exit")
+
+    //try - blok który jest monitorowany pod względem wystąpienia błędu
+    try
     {
-        exit = true;
+        var intValue = int.Parse(input);
+
+        if (intValue == 0)
+            throw new Exception("Something wrong");
+        Console.WriteLine(intValue);
     }
-    else if (input == "break")
+    //catch - blok obsługi błędów danego typu
+    catch(FormatException)
     {
-        break;
+        Console.WriteLine("Błędny format");
+    }
+    catch(Exception e)
+    {
+        Debug.WriteLine(e.Message);
+    }
+    //finally - blok wykona się zawsze po try i po cache
+    finally
+    {
+        Console.WriteLine();
     }
 }
 
-exit = true;
-do
+void Loops()
 {
-    Strings();
-
-    //var - typ zmiennej określany na podstawie wyniku prawej strony przypisania
-    var input = Console.ReadLine();
-    if (input == "exit")
+    bool exit = true;
+    while (!exit)
     {
-        exit = true;
+        Strings();
+
+        //var - typ zmiennej określany na podstawie wyniku prawej strony przypisania
+        var input = Console.ReadLine();
+        if (input == "exit")
+        {
+            exit = true;
+        }
+        else if (input == "break")
+        {
+            break;
+        }
     }
-    else if (input == "break")
+
+    exit = true;
+    do
     {
-        break;
+        Strings();
+
+        //var - typ zmiennej określany na podstawie wyniku prawej strony przypisania
+        var input = Console.ReadLine();
+        if (input == "exit")
+        {
+            exit = true;
+        }
+        else if (input == "break")
+        {
+            break;
+        }
+    } while (exit);
+
+    //for([1], [2][5][8][11], [4][7][10]) { [3][6][9] }
+
+    // [1] inicjalizacja 
+    // [2] sprawdzenie warunku
+    // [3] wykonanie ciała pętli
+    // [4] inkrementacja
+
+    for (var i = 0; i < 3; /*i = i+1*/ i++)
+    {
+        Console.WriteLine(i);
     }
-} while (exit);
 
-//for([1], [2][5][8][11], [4][7][10]) { [3][6][9] }
+    for (int i = 0, j = 5; i < 5 || j > 0; i = j - i)
+    {
+        Console.WriteLine(i);
+        j = i - j;
+    }
 
-// [1] inicjalizacja 
-// [2] sprawdzenie warunku
-// [3] wykonanie ciała pętli
-// [4] inkrementacja
 
-for(var i = 0; i < 3; /*i = i+1*/ i++ )
-{
-    Console.WriteLine(i);
+    //warunek nie jest wpisany - pętla nieskończona
+    for (int i = 0; ; i++)
+    {
+        if (i % 2 == 0)
+            //przewanie wykonywania ciała, ale nie przerywa pętli
+            continue;
+        if (i > 100)
+            //przewanie wykonywania ciała i pętli
+            break;
+        Console.WriteLine(i);
+    }
+
+
 }
-
-for (int i = 0, j = 5; i < 5 || j > 0; i = j - i)
-{
-    Console.WriteLine(i);
-    j = i - j;
-}
-
-
-//warunek nie jest wpisany - pętla nieskończona
-for (int i = 0; ;i++)
-{
-    Console.WriteLine(i);
-}
-
-
-
 
 
 void Conditions()
