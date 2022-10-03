@@ -21,7 +21,9 @@ if (value < 0)
 {
     Console.WriteLine($"Wartość jest mniejsza od 0");
 }
-if (value <= 0)
+//if (value <= 0)
+// || - lub
+if (value < 0 || value == 0)
 {
     Console.WriteLine($"Wartość jest mniejsza lub równa 0");
 }
@@ -29,7 +31,10 @@ if (value >= 0)
 {
     Console.WriteLine($"Wartość jest więszka lub równa 0");
 }
-if (value == 0)
+//if (value == 0)
+// && - i
+// ! - negacja
+if(!(value < 0) && !(value > 0))
 {
     Console.WriteLine($"Wartość jest równa 0");
 }
