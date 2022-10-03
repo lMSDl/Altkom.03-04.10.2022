@@ -2,81 +2,108 @@
 using System.Globalization;
 
 
-int value = int.Parse(Console.ReadLine());
-int calculatedValue = value % 2;
-if(calculatedValue == 0)
+
+void Conditions()
 {
-    Console.WriteLine("Wartość jest podzielna przez 2");
-}
-else
-{
-    Console.WriteLine($"Reszta z dzielenia przez 2 to {calculatedValue}");
+
+    int value = int.Parse(Console.ReadLine());
+    int calculatedValue = value % 2;
+    if (calculatedValue == 0)
+    {
+        Console.WriteLine("Wartość jest podzielna przez 2");
+    }
+    else
+    {
+        Console.WriteLine($"Reszta z dzielenia przez 2 to {calculatedValue}");
+    }
+
+    if (value > 0)
+    {
+        Console.WriteLine($"Wartość jest większa od 0");
+    }
+    if (value < 0)
+    {
+        Console.WriteLine($"Wartość jest mniejsza od 0");
+    }
+    //if (value <= 0)
+    // || - lub
+    if (value < 0 || value == 0)
+    {
+        Console.WriteLine($"Wartość jest mniejsza lub równa 0");
+    }
+    if (value >= 0)
+    {
+        Console.WriteLine($"Wartość jest więszka lub równa 0");
+    }
+    //if (value == 0)
+    // && - i
+    // ! - negacja
+    if (!(value < 0) && !(value > 0))
+    {
+        Console.WriteLine($"Wartość jest równa 0");
+    }
+
+    if (calculatedValue > value)
+    {
+        Console.WriteLine("calculatedValue > value");
+    }
+    else if (calculatedValue < value)
+    {
+        Console.WriteLine("calculatedValue < value");
+    }
+    else
+    {
+        Console.WriteLine("calculatedValue == value");
+    }
+
+
+    string stringValue = Console.ReadLine();
+
+
+    //if wybiera sprawdzając po kolei warunki
+    if (stringValue == "exit")
+    {
+        Console.WriteLine("Bye!");
+    }
+    else if (stringValue == "o/")
+    {
+        // ukośnik opadający to oznaczenie znaku specjalnego
+        // @ wyłącza rozpoznawanie znaków specjalnych
+        Console.WriteLine(@"\o");
+        // \t - znak tabulatora
+        Console.WriteLine("\to");
+        // \\ - znakiem specjalnym jest sam ukośnik opadający
+        Console.WriteLine("\\o");
+    }
+    else if (stringValue.Equals("Paul", StringComparison.CurrentCultureIgnoreCase))
+    {
+        Console.WriteLine("Wpisałeś swoje imię");
+    }
+    else
+    {
+        Console.WriteLine(stringValue);
+    }
+
+    //switch wybiera na podstawie dopasowania wzorca 
+    switch (stringValue)
+    {
+        case "exit":
+            Console.WriteLine("Bye!");
+            break;
+        case "o/":
+            Console.WriteLine("\\o");
+            break;
+        case "Paul":
+        case "paul":
+            Console.WriteLine("Wpisałeś swoje imię");
+            break;
+        default:
+            Console.WriteLine(stringValue);
+            break;
+    }
+
 }
 
-if (value > 0)
-{
-    Console.WriteLine($"Wartość jest większa od 0");
-}
-if (value < 0)
-{
-    Console.WriteLine($"Wartość jest mniejsza od 0");
-}
-//if (value <= 0)
-// || - lub
-if (value < 0 || value == 0)
-{
-    Console.WriteLine($"Wartość jest mniejsza lub równa 0");
-}
-if (value >= 0)
-{
-    Console.WriteLine($"Wartość jest więszka lub równa 0");
-}
-//if (value == 0)
-// && - i
-// ! - negacja
-if(!(value < 0) && !(value > 0))
-{
-    Console.WriteLine($"Wartość jest równa 0");
-}
-
-if(calculatedValue > value)
-{
-    Console.WriteLine("calculatedValue > value");
-}
-else if (calculatedValue < value)
-{
-    Console.WriteLine("calculatedValue < value");
-}
-else
-{
-    Console.WriteLine("calculatedValue == value");
-}
-
-
-string stringValue = Console.ReadLine();
-
-if(stringValue == "exit")
-{
-    Console.WriteLine("Bye!");
-}
-else if(stringValue == "o/")
-{
-    // ukośnik opadający to oznaczenie znaku specjalnego
-    // @ wyłącza rozpoznawanie znaków specjalnych
-    Console.WriteLine(@"\o");
-    // \t - znak tabulatora
-    Console.WriteLine("\to");
-    // \\ - znakiem specjalnym jest sam ukośnik opadający
-    Console.WriteLine("\\o");
-}
-else if (stringValue.Equals("Paul", StringComparison.CurrentCultureIgnoreCase))
-{
-    Console.WriteLine("Wpisałeś swoje imię");
-}
-else
-{
-    Console.WriteLine(stringValue);
-}
 
 
 void Numebrs()
