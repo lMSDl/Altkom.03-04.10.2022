@@ -1,60 +1,90 @@
 ﻿using System;
 using System.Globalization;
 
-
-int a = 20;
-int b = 8;
-int c = a + b;
-Console.WriteLine(c);
-c = a - b;
-Console.WriteLine(c);
-c = a * b;
-Console.WriteLine(c);
-c = a / b;
-Console.WriteLine(c);
-//reszta z dzielenia
-c = a % b;
-Console.WriteLine(c);
-
-
-c = a + a * a;
-Console.WriteLine(c);
-c = (a + a) * a;
-Console.WriteLine(c);
+void Numebrs()
+{
+    int a = 20;
+    int b = 8;
+    int c = a + b;
+    Console.WriteLine(c);
+    c = a - b;
+    Console.WriteLine(c);
+    c = a * b;
+    Console.WriteLine(c);
+    c = a / b;
+    Console.WriteLine(c);
+    //reszta z dzielenia
+    c = a % b;
+    Console.WriteLine(c);
 
 
-float aa = 20f;
-float bb = 8f;
-float cc = aa / bb;
-Console.WriteLine(cc);
-cc = a / bb;
-Console.WriteLine(cc);
-
-Console.WriteLine(5/3);
-Console.WriteLine(5/3f);
-
-string stringA = a.ToString();
-string stringB = b.ToString();
-Console.WriteLine(stringA + stringB);
-
-Console.WriteLine($"short max:{short.MaxValue} min:{short.MinValue}");
-Console.WriteLine($"int max:{int.MaxValue} min:{int.MinValue}");
-Console.WriteLine($"long max:{long.MaxValue} min:{long.MinValue}");
-Console.WriteLine($"float max:{float.MaxValue} min:{float.MinValue}");
-Console.WriteLine($"double max:{double.MaxValue} min:{double.MinValue}");
-Console.WriteLine($"decimal max:{decimal.MaxValue} min:{decimal.MinValue}");
+    c = a + a * a;
+    Console.WriteLine(c);
+    c = (a + a) * a;
+    Console.WriteLine(c);
 
 
-Console.WriteLine(5 / 3.0f);
-//double
-Console.WriteLine(5 / 3.0);
-Console.WriteLine(500000000 / 3.0d);
-//decimal
-Console.WriteLine(5 / 3m);
-Console.WriteLine(500000000 / 3.0m);
+    float aa = 20f;
+    float bb = 8f;
+    float cc = aa / bb;
+    Console.WriteLine(cc);
+    cc = a / bb;
+    Console.WriteLine(cc);
+
+    Console.WriteLine(5 / 3);
+    Console.WriteLine(5 / 3f);
+
+    string stringA = a.ToString();
+    string stringB = b.ToString();
+    Console.WriteLine(stringA + stringB);
+
+    Console.WriteLine($"short max:{short.MaxValue} min:{short.MinValue}");
+    Console.WriteLine($"int max:{int.MaxValue} min:{int.MinValue}");
+    Console.WriteLine($"long max:{long.MaxValue} min:{long.MinValue}");
+    Console.WriteLine($"float max:{float.MaxValue} min:{float.MinValue}");
+    Console.WriteLine($"double max:{double.MaxValue} min:{double.MinValue}");
+    Console.WriteLine($"decimal max:{decimal.MaxValue} min:{decimal.MinValue}");
 
 
-void StringsDemo()
+    Console.WriteLine(5 / 3.0f);
+    //double
+    Console.WriteLine(5 / 3.0);
+    Console.WriteLine(500000000 / 3.0d);
+    //decimal
+    Console.WriteLine(5 / 3m);
+    Console.WriteLine(500000000 / 3.0m);
+
+
+    int intValue = int.MaxValue;
+    long longValue = 1;
+
+    longValue = intValue;
+    Console.WriteLine(longValue);
+
+    longValue = long.MaxValue;
+    //rzutowanie
+    intValue = (int)longValue;
+    Console.WriteLine(intValue);
+
+    intValue = int.MaxValue;
+    intValue = intValue + 1;
+    Console.WriteLine(intValue);
+
+    float floatValue = (float)3.77777777777;
+    Console.WriteLine(floatValue);
+
+    string stringValue = "123";
+    intValue = int.Parse(stringValue); ;
+    Console.WriteLine(intValue);
+
+
+    stringValue = "123,456";
+    floatValue = float.Parse(stringValue); ;
+    Console.WriteLine(floatValue);
+}
+
+
+void Strings()
 {
     //deklaracja zmiennej lokalnej o typie string i nazwie hello
     string hello;
