@@ -35,6 +35,33 @@ do
     }
 } while (exit);
 
+//for([1], [2][5][8][11], [4][7][10]) { [3][6][9] }
+
+// [1] inicjalizacja 
+// [2] sprawdzenie warunku
+// [3] wykonanie ciała pętli
+// [4] inkrementacja
+
+for(var i = 0; i < 3; /*i = i+1*/ i++ )
+{
+    Console.WriteLine(i);
+}
+
+for (int i = 0, j = 5; i < 5 || j > 0; i = j - i)
+{
+    Console.WriteLine(i);
+    j = i - j;
+}
+
+
+//warunek nie jest wpisany - pętla nieskończona
+for (int i = 0; ;i++)
+{
+    Console.WriteLine(i);
+}
+
+
+
 
 
 void Conditions()
