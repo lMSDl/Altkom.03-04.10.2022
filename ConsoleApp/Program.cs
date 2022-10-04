@@ -1,35 +1,72 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 
-Loops();
+int a = 5;
+Console.WriteLine(a);
+Test(a);
+Console.WriteLine(a);
 
-while (true)
+var item = new Item();
+item.Quantity = 2;
+
+Console.WriteLine(item.Quantity);
+TestItem(item);
+Console.WriteLine(item.Quantity);
+
+var itemStruct = new ItemStruct();
+itemStruct.Quantity = 2;
+Console.WriteLine(itemStruct.Quantity);
+TestItemStruct(itemStruct);
+Console.WriteLine(itemStruct.Quantity);
+
+
+void Test(int a)
 {
-    var input = Console.ReadLine();
+    a = 7;
+}
 
-    //try - blok który jest monitorowany pod względem wystąpienia błędu
-    try
-    {
-        var intValue = int.Parse(input);
+void TestItem(Item a)
+{
+    a.Quantity = 7;
+}
 
-        if (intValue == 0)
-            throw new Exception("Something wrong");
-        Console.WriteLine(intValue);
-    }
-    //catch - blok obsługi błędów danego typu
-    catch(FormatException)
+void TestItemStruct(ItemStruct a)
+{
+    a.Quantity = 7;
+}
+
+
+void Exceptions()
+{
+    while (true)
     {
-        Console.WriteLine("Błędny format");
-    }
-    catch(Exception e)
-    {
-        Debug.WriteLine(e.Message);
-    }
-    //finally - blok wykona się zawsze po try i po cache
-    finally
-    {
-        Console.WriteLine();
+        var input = Console.ReadLine();
+
+        //try - blok który jest monitorowany pod względem wystąpienia błędu
+        try
+        {
+            var intValue = int.Parse(input);
+
+            if (intValue == 0)
+                throw new Exception("Something wrong");
+            Console.WriteLine(intValue);
+        }
+        //catch - blok obsługi błędów danego typu
+        catch (FormatException)
+        {
+            Console.WriteLine("Błędny format");
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e.Message);
+        }
+        //finally - blok wykona się zawsze po try i po cache
+        finally
+        {
+            Console.WriteLine();
+        }
     }
 }
 
