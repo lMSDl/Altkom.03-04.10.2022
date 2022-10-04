@@ -1,26 +1,66 @@
 ﻿using Models;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 
-int a = 5;
-Console.WriteLine(a);
-Test(a);
-Console.WriteLine(a);
+void ArrayVsList()
+{
 
-var item = new Item();
-item.Quantity = 2;
+    var item1 = new Item() { Name = "mleko" };
+    var item2 = new Item() { Name = "masło" };
+    var item3 = new Item() { Name = "chleb" };
 
-Console.WriteLine(item.Quantity);
-TestItem(item);
-Console.WriteLine(item.Quantity);
+    //utworzenie tablicy z 3 wskazanych elementów
+    Item[] items = { item1, item2, item3 };
 
-var itemStruct = new ItemStruct();
-itemStruct.Quantity = 2;
-Console.WriteLine(itemStruct.Quantity);
-TestItemStruct(itemStruct);
-Console.WriteLine(itemStruct.Quantity);
+    //utworzenie tablicy o wielkości 3
+    items = new Item[3];
+    //umieszczenie elementów pod konkretnymi indeksami (numerowanie od 0)
+    items[0] = item1;
+    items[1] = item2;
+    items[2] = item3;
+    //do elementów tablicy odwołujemy się poprzez indekser, czyli nawiasy kwadratowe
 
+    //zmiana rozmiaru tablicy jest kosztowna, więc powinniśmy jej używać tylko gdy nie mamy zamiaru zmieniać jej wielkości
+    Array.Resize(ref items, 4);
+    items[3] = new Item();
+
+    Console.WriteLine(items[1].Name);
+
+
+    List<Item> itemList = new List<Item>();
+    itemList.Add(item1);
+    itemList.Add(item2);
+    itemList.Add(item3);
+    itemList.Add(new Item());
+    itemList.Add(new Item());
+
+    itemList.Remove(item3);
+
+    Console.WriteLine(itemList[1].Name);
+}
+
+void StructVsClass()
+{
+    int a = 5;
+    Console.WriteLine(a);
+    Test(a);
+    Console.WriteLine(a);
+
+    var item = new Item();
+    item.Quantity = 2;
+
+    Console.WriteLine(item.Quantity);
+    TestItem(item);
+    Console.WriteLine(item.Quantity);
+
+    var itemStruct = new ItemStruct();
+    itemStruct.Quantity = 2;
+    Console.WriteLine(itemStruct.Quantity);
+    TestItemStruct(itemStruct);
+    Console.WriteLine(itemStruct.Quantity);
+}
 
 void Test(int a)
 {

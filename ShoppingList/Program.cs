@@ -14,3 +14,5 @@ var item3 = new Item() { Name = "chleb", Quantity = 1 };
 
 /*var car = new Car(1, 2, 3, 4, 5, 6);
 car = new Car() { Doors = 2, Seats = 3, EnginePower = 400, Wheels = 4, Windows = 4, TrunkCapacity = 200 };*/
+
+
