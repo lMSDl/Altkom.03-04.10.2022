@@ -32,6 +32,24 @@ namespace Models
             return quantity;
         }
 */
+
+        //konstruktor bezparametrowy
+        //jest to metoda (jak każda inna), którą charakteryzuje brak zwracanego typu i nazwa musi być taka jak nazwa klasy
+        //jeśli klasa nie posiada żadnego kontruktowa, to niejawnie zostanie wygenerowany konstruktor domyślny - wyglądający jak ten
+        public Item()
+        {
+        }
+
+        //konstruktor parametrowy
+        //jeśli występuje jakiś kontruktor z parametrami, to domyślny konstruktor bezparametrowy nie zostanie wygenerowany
+        public Item(string name)
+        {
+            Name = name;
+            Quantity = 1;
+        }
+
+
+
         //back-filed dla full-property
         private int quantity;
 
@@ -46,7 +64,7 @@ namespace Models
             get { 
                 return quantity;
             }
-            //setter posiada niejany parametr o nazwie value
+            //setter posiada niejawny parametr o nazwie value
             set
             {
                 if(value > 0)
